@@ -1,0 +1,37 @@
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.icons-and-topup-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+.icons-topup-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0.5rem 0 1.25rem;
+}
+
+.promo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+.promo-row label {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+.promo-row input {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  color: var(--text);
+  font-size: 0.9rem;
+}

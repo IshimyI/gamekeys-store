@@ -1,0 +1,9 @@
+@import url('./src/app/app.css');
+@import url('./src/entities/product/product.css');
+@import url('./src/entities/order/order.css');
+@import url('./src/widgets/product-list/product-list.css');
+@import url('./src/widgets/service-icons/service-icons.css');
+@import url('./src/widgets/steam-topup/steam-topup.css');
+@import url('./src/widgets/catalog-menu/catalog-menu.css');
+@import url('./src/widgets/banner-carousel/banner-carousel.css');
+@import url('./src/pages/storefront/storefront.css');

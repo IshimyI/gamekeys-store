@@ -1,0 +1,108 @@
+.catalog-wrap {
+  position: relative;
+}
+.catalog-button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #000;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.catalog-button__icon {
+  flex-shrink: 0;
+  color: #fff;
+}
+.catalog-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  width: 900px;
+  max-width: calc(100vw - 2.5rem);
+  z-index: 20;
+  overflow: hidden;
+}
+.catalog-dropdown.open {
+  display: flex;
+}
+
+.catalog-nav {
+  flex: 0 0 260px;
+  border-right: 1px solid var(--border);
+  padding: 0.75rem 0;
+}
+.catalog-nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0.7rem 1.25rem;
+  font-size: 0.9rem;
+  color: var(--text);
+  cursor: pointer;
+}
+.catalog-nav-item.active {
+  background: var(--card);
+  font-weight: 600;
+}
+.catalog-nav-arrow {
+  color: var(--text-dim);
+}
+
+.catalog-panel {
+  flex: 1 1 auto;
+  padding: 1.5rem;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+.catalog-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1.5rem;
+}
+.catalog-col-title {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 0.6rem;
+}
+.catalog-col-arrow {
+  color: var(--text-dim);
+  font-weight: 400;
+}
+.catalog-col-item {
+  padding: 0.35rem 0;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+.catalog-col-item:hover {
+  color: var(--text);
+}
+
+.catalog-collections {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+.catalog-collections-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
+}

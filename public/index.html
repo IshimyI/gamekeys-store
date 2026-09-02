@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameKeys — цифровой магазин для геймеров</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <div class="catalog-wrap">
+          <button class="catalog-button" id="catalogButton" type="button">
+            <svg
+              class="catalog-button__icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <rect
+                x="1"
+                y="1"
+                width="6"
+                height="6"
+                rx="1.5"
+                fill="currentColor"
+              />
+              <rect
+                x="9"
+                y="1"
+                width="6"
+                height="6"
+                rx="1.5"
+                fill="currentColor"
+              />
+              <rect
+                x="1"
+                y="9"
+                width="6"
+                height="6"
+                rx="1.5"
+                fill="currentColor"
+              />
+              <rect
+                x="9"
+                y="9"
+                width="6"
+                height="6"
+                rx="1.5"
+                fill="currentColor"
+              />
+            </svg>
+            Каталог
+          </button>
+          <div class="catalog-dropdown" id="catalogDropdown"></div>
+        </div>
+        <div class="header-search">
+          <input type="text" placeholder="Игра, приложение или услуга..." />
+          <button
+            class="header-favorite-icon"
+            type="button"
+            aria-label="Избранное"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#9ca3af"
+              stroke-width="1.6"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 21s-7.5-4.6-10-9.3C.4 8.4 2 5 5.4 5 7.6 5 9.5 6.3 12 9c2.5-2.7 4.4-4 6.6-4C22 5 23.6 8.4 22 11.7 19.5 16.4 12 21 12 21z"
+              />
+            </svg>
+          </button>
+          <button class="header-search-icon" type="button" aria-label="Поиск">
+            🔍
+          </button>
+        </div>
+        <button class="header-profile" type="button" aria-label="Профиль">
+          👤
+        </button>
+      </div>
+    </header>
+
+    <section class="banner">
+      <div class="banner-viewport">
+        <div class="banner-track" id="bannerTrack"></div>
+        <div class="banner-arrows">
+          <button
+            class="banner-arrow"
+            id="bannerPrev"
+            type="button"
+            aria-label="Предыдущий слайд"
+          >
+            ‹
+          </button>
+          <button
+            class="banner-arrow"
+            id="bannerNext"
+            type="button"
+            aria-label="Следующий слайд"
+          >
+            ›
+          </button>
+        </div>
+        <div class="banner-dots" id="bannerDots"></div>
+      </div>
+    </section>
+
+    <main class="container">
+      <section class="icons-and-topup-card">
+        <div id="serviceIcons" class="service-icons"></div>
+
+        <div class="icons-topup-divider"></div>
+
+        <div class="steam-topup-row">
+          <img
+            class="steam-topup-icon"
+            src="src/widgets/service-icons/assets/steam.png"
+            alt="Steam"
+          />
+
+          <div class="steam-topup-title">
+            <div class="steam-topup-title-line">
+              <span>Пополнение Steam</span>
+              <span class="steam-topup-badge">5%</span>
+            </div>
+            <button class="steam-topup-promo" type="button">
+              Ввести промокод
+            </button>
+          </div>
+
+          <div class="steam-topup-field">
+            <span class="steam-topup-field-label">Логин Steam</span>
+            <input
+              class="steam-topup-login"
+              type="text"
+              placeholder="Введите логин"
+              disabled
+            />
+          </div>
+
+          <div class="steam-topup-field">
+            <span class="steam-topup-field-label">Сумма</span>
+            <select class="steam-topup-amount" id="steamAmountSelect"></select>
+          </div>
+
+          <div class="currency-switch" id="steamCurrencySwitch">
+            <button class="currency-btn active" type="button">₽</button>
+            <button class="currency-btn" type="button">$</button>
+            <button class="currency-btn" type="button">₸</button>
+          </div>
+          <button
+            class="buy-btn steam-topup-submit"
+            id="steamTopupBuyBtn"
+            type="button"
+          >
+            Пополнить
+          </button>
+        </div>
+      </section>
+
+      <div class="product-tabs" id="productTabs">
+        <button class="product-tab active" type="button">🎁 Донат</button>
+        <button class="product-tab" type="button">🔔 Подписки</button>
+        <button class="product-tab" type="button">⚔️ Предметы</button>
+        <button class="product-tab" type="button">👤 Аккаунты</button>
+        <button class="product-tab" type="button">🔑 Ключи</button>
+        <button class="product-tab" type="button">💰 Игровая валюта</button>
+        <button class="product-tab" type="button">📦 Другое</button>
+      </div>
+
+      <section class="product-section">
+        <div class="product-section-head">
+          <h2>Популярные товары</h2>
+        </div>
+        <div id="productsPopular" class="products"></div>
+      </section>
+
+      <section class="product-section">
+        <div class="product-section-head">
+          <h2>Рекомендованные товары</h2>
+          <button class="show-all-btn" type="button">Показать все</button>
+        </div>
+        <div id="productsRecommended" class="products"></div>
+      </section>
+
+      <section class="product-section">
+        <div class="product-section-head">
+          <h2>Другие товары</h2>
+          <button class="show-all-btn" type="button">Показать все</button>
+        </div>
+        <div id="productsOther" class="products"></div>
+      </section>
+
+      <div id="orderPanel" class="order-panel hidden">
+        <h2>Заказ</h2>
+        <div id="orderStatus"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <nav class="footer-links">
+          <a href="#">Стать продавцом</a>
+          <a href="#">Бонусы</a>
+          <a href="#">Поддержка</a>
+          <a href="#">Гарантии</a>
+          <a href="#">Отзывы</a>
+        </nav>
+
+        <div class="footer-row">
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="ВКонтакте">VK</a>
+            <a href="#" class="footer-social" aria-label="Telegram">
+              <img
+                src="src/widgets/service-icons/assets/telegram.png"
+                alt=""
+                width="18"
+                height="18"
+              />
+            </a>
+            <a href="#" class="footer-social" aria-label="TikTok">
+              <img
+                src="src/widgets/service-icons/assets/tiktok.png"
+                alt=""
+                width="18"
+                height="18"
+              />
+            </a>
+            <a href="#" class="footer-social" aria-label="YouTube">▶</a>
+          </div>
+
+          <div class="footer-payments">
+            <span class="footer-payment footer-payment--visa">VISA</span>
+            <span class="footer-payment footer-payment--mir">мир</span>
+            <span
+              class="footer-payment footer-payment--mc"
+              aria-label="Mastercard"
+            ></span>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <a href="#">Политика конфиденциальности</a>
+          <a href="#">Соглашение</a>
+          <a href="#">Договор-оферта</a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="src/app/index.js"></script>
+  </body>
+</html>

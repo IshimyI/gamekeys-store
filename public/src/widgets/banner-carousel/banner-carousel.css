@@ -1,0 +1,82 @@
+.banner {
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+  max-width: 960px;
+  margin: 0 auto;
+  border: 2px solid #fff;
+}
+.banner-viewport {
+  max-width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+.banner-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+.banner-slide {
+  flex: 0 0 100%;
+  padding: 3rem 3.5rem;
+  box-sizing: border-box;
+}
+.banner-slide h1,
+.banner-slide p {
+  max-width: 480px;
+}
+.banner-slide h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.8rem;
+  color: #fff;
+}
+.banner-slide p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.banner-arrows {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 4px;
+  background: #fff;
+  border-radius: 6px;
+  border-top-right-radius: 0;
+  padding: 5px;
+  border: 5px solid #fff;
+  z-index: 5;
+}
+.banner-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  background: transparent;
+  color: #000;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.banner-arrow:hover { background: rgba(255, 255, 255, 0.15); }
+
+.banner-dots {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  gap: 4px;
+  z-index: 5;
+}
+.banner-dot {
+  width: 20px;
+  height: 4px;
+  border-radius: 2px;
+  border: none;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  padding: 0;
+}
+.banner-dot.active {
+  background: #fff;
+}
